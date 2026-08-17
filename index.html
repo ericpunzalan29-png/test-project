@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DK Insurance Agency | Personalized Coverage, Trusted Protection</title>
+<meta name="description" content="DK Insurance Agency helps individuals, families, and businesses find the right coverage through personalized guidance and access to top-rated carriers.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<header class="site-header" id="siteHeader">
+  <div class="container header-inner">
+    <a href="#home" class="logo">
+      <span class="logo-mark">
+        <svg width="34" height="34" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 2L36 9V19C36 28.5 29.5 35.8 20 38C10.5 35.8 4 28.5 4 19V9L20 2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+          <path d="M13 20.5L18 25.5L27.5 15" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
+      <span class="logo-text">DK <em>Insurance</em></span>
+    </a>
+
+    <nav class="main-nav" id="mainNav">
+      <a href="#services" class="nav-link">Services</a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="#why" class="nav-link">Why Us</a>
+      <a href="#testimonials" class="nav-link">Reviews</a>
+      <a href="#faq" class="nav-link">FAQ</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </nav>
+
+    <div class="header-actions">
+      <a href="tel:+15551234567" class="header-phone">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8C8 13.6 10.4 16 13.2 17.4L15.4 15.2C15.7 14.9 16.1 14.8 16.5 15C17.8 15.4 19.1 15.6 20.5 15.6C21.1 15.6 21.5 16 21.5 16.6V20.5C21.5 21.1 21.1 21.5 20.5 21.5C10.8 21.5 3 13.7 3 4C3 3.4 3.4 3 4 3H7.9C8.5 3 8.9 3.4 8.9 4C8.9 5.4 9.1 6.7 9.5 8C9.6 8.4 9.5 8.8 9.3 9.1L6.6 10.8Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+        <span>(555) 123-4567</span>
+      </a>
+      <a href="#quote" class="btn btn-primary btn-sm">Get a Free Quote</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobileNav">
+  <a href="#services" class="mobile-link">Services</a>
+  <a href="#about" class="mobile-link">About</a>
+  <a href="#why" class="mobile-link">Why Us</a>
+  <a href="#testimonials" class="mobile-link">Reviews</a>
+  <a href="#faq" class="mobile-link">FAQ</a>
+  <a href="#contact" class="mobile-link">Contact</a>
+  <a href="#quote" class="btn btn-primary" style="margin-top:1rem;">Get a Free Quote</a>
+</div>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <canvas class="hero-canvas" id="heroCanvas"></canvas>
+    <div class="hero-glow hero-glow-1"></div>
+    <div class="hero-glow hero-glow-2"></div>
+
+    <div class="container hero-inner">
+      <p class="eyebrow reveal">
+        <span class="eyebrow-dot"></span>
+        Licensed Independent Insurance Agency
+      </p>
+      <h1 class="hero-title reveal" style="--d:0.08s">
+        Insurance, reimagined<br>
+        for your <span class="text-gold">peace of mind</span>.
+      </h1>
+      <p class="hero-sub reveal" style="--d:0.16s">
+        DK Insurance Agency compares top-rated carriers to find coverage that actually
+        fits your life — with a real advisor on the phone, not a call center script.
+      </p>
+
+      <div class="hero-cta reveal" style="--d:0.24s">
+        <a href="#quote" class="btn btn-primary btn-lg">
+          Get a Free Quote
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="tel:+15551234567" class="btn btn-ghost btn-lg">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8C8 13.6 10.4 16 13.2 17.4L15.4 15.2C15.7 14.9 16.1 14.8 16.5 15C17.8 15.4 19.1 15.6 20.5 15.6C21.1 15.6 21.5 16 21.5 16.6V20.5C21.5 21.1 21.1 21.5 20.5 21.5C10.8 21.5 3 13.7 3 4C3 3.4 3.4 3 4 3H7.9C8.5 3 8.9 3.4 8.9 4C8.9 5.4 9.1 6.7 9.5 8C9.6 8.4 9.5 8.8 9.3 9.1L6.6 10.8Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          (555) 123-4567
+        </a>
+      </div>
+
+      <div class="trust-row reveal" style="--d:0.32s">
+        <div class="trust-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 2L20 6V12C20 17 16.5 20.7 12 22C7.5 20.7 4 17 4 12V6L12 2Z" stroke="currentColor" stroke-width="1.8"/></svg> Licensed &amp; Bonded</div>
+        <div class="trust-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M12 7V12L15.5 14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg> 15+ Years Experience</div>
+        <div class="trust-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 3L14.6 8.9L21 9.6L16.3 13.9L17.6 20.3L12 17L6.4 20.3L7.7 13.9L3 9.6L9.4 8.9L12 3Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg> 4.9★ · 500+ Reviews</div>
+        <div class="trust-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M3 12H8L10 6L14 18L16 12H21" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> A-Rated Carrier Network</div>
+      </div>
+    </div>
+
+    <a href="#stats" class="scroll-cue" aria-label="Scroll down">
+      <span></span>
+    </a>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats" id="stats">
+    <div class="container stats-grid">
+      <div class="stat reveal">
+        <span class="stat-num" data-count="5000" data-suffix="+">0</span>
+        <span class="stat-label">Policies Written</span>
+      </div>
+      <div class="stat reveal" style="--d:0.08s">
+        <span class="stat-num" data-count="15" data-suffix="+">0</span>
+        <span class="stat-label">Years in Business</span>
+      </div>
+      <div class="stat reveal" style="--d:0.16s">
+        <span class="stat-num" data-count="98" data-suffix="%">0</span>
+        <span class="stat-label">Client Retention</span>
+      </div>
+      <div class="stat reveal" style="--d:0.24s">
+        <span class="stat-num" data-count="24" data-suffix="/7">0</span>
+        <span class="stat-label">Claims Support</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="section" id="services">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="kicker">What We Cover</p>
+        <h2>Coverage built around your life, <span class="text-gold">not a template</span>.</h2>
+        <p class="section-sub">Every policy starts with a conversation. We shop dozens of A-rated carriers so you don't have to.</p>
+      </div>
+
+      <div class="grid grid-3">
+        <div class="card service-card reveal">
+          <div class="card-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M5 11L6.5 6.5C6.8 5.6 7.6 5 8.6 5H15.4C16.4 5 17.2 5.6 17.5 6.5L19 11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><rect x="3" y="11" width="18" height="7" rx="1.6" stroke="currentColor" stroke-width="1.6"/><circle cx="7.5" cy="18" r="1.6" stroke="currentColor" stroke-width="1.6"/><circle cx="16.5" cy="18" r="1.6" stroke="currentColor" stroke-width="1.6"/></svg>
+          </div>
+          <h3>Auto Insurance</h3>
+          <p>Liability, collision, and comprehensive plans tailored to how — and how much — you actually drive.</p>
+          <a href="#quote" class="card-link">Get a quote <span>→</span></a>
+        </div>
+
+        <div class="card service-card reveal" style="--d:0.06s">
+          <div class="card-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M3 11L12 4L21 11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 10V19C5 19.6 5.4 20 6 20H18C18.6 20 19 19.6 19 19V10" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M10 20V14H14V20" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Home Insurance</h3>
+          <p>Protect your property, belongings, and liability with coverage that keeps pace with your home's value.</p>
+          <a href="#quote" class="card-link">Get a quote <span>→</span></a>
+        </div>
+
+        <div class="card service-card reveal" style="--d:0.12s">
+          <div class="card-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 21C12 21 4 15.6 4 9.8C4 6.9 6.2 4.7 9 4.7C10.5 4.7 11.6 5.4 12 6.3C12.4 5.4 13.5 4.7 15 4.7C17.8 4.7 20 6.9 20 9.8C20 15.6 12 21 12 21Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Life Insurance</h3>
+          <p>Term and whole life options that give your family lasting financial security, without the guesswork.</p>
+          <a href="#quote" class="card-link">Get a quote <span>→</span></a>
+        </div>
+
+        <div class="card service-card reveal" style="--d:0.18s">
+          <div class="card-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><rect x="4" y="8" width="16" height="12" rx="1.4" stroke="currentColor" stroke-width="1.6"/><path d="M9 8V6C9 4.9 9.9 4 11 4H13C14.1 4 15 4.9 15 6V8" stroke="currentColor" stroke-width="1.6"/><path d="M4 13H20" stroke="currentColor" stroke-width="1.6"/></svg>
+          </div>
+          <h3>Business Insurance</h3>
+          <p>General liability, property, and workers' comp built to protect what you've worked hard to build.</p>
+          <a href="#quote" class="card-link">Get a quote <span>→</span></a>
+        </div>
+
+        <div class="card service-card reveal" style="--d:0.24s">
+          <div class="card-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 21C16.4 17.7 20 14.1 20 9.8C20 6.9 17.8 4.7 15 4.7C13.5 4.7 12.4 5.4 12 6.3C11.6 5.4 10.5 4.7 9 4.7C6.2 4.7 4 6.9 4 9.8C4 14.1 7.6 17.7 12 21Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 12H11L12.5 9.5L13.5 14L15 12H16" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Health Insurance</h3>
+          <p>Individual and family health plans, explained in plain English — no jargon, no surprises.</p>
+          <a href="#quote" class="card-link">Get a quote <span>→</span></a>
+        </div>
+
+        <div class="card service-card reveal" style="--d:0.3s">
+          <div class="card-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 2L20 6V11C20 16.5 16.5 20.7 12 22C7.5 20.7 4 16.5 4 11V6L12 2Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M12 8V13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="12" cy="16" r="0.9" fill="currentColor"/></svg>
+          </div>
+          <h3>Umbrella &amp; Specialty</h3>
+          <p>Extra liability protection and niche coverage for the risks standard policies leave out.</p>
+          <a href="#quote" class="card-link">Get a quote <span>→</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section section-about" id="about">
+    <div class="container about-grid">
+      <div class="about-visual reveal">
+        <div class="about-frame">
+          <div class="about-badge">
+            <span class="about-badge-num">15+</span>
+            <span>Years Protecting<br>Families &amp; Businesses</span>
+          </div>
+        </div>
+      </div>
+      <div class="about-content reveal" style="--d:0.1s">
+        <p class="kicker">About DK Insurance</p>
+        <h2>An independent agency, <span class="text-gold">on your side</span> — not the carrier's.</h2>
+        <p class="lead-text">
+          DK Insurance Agency was built on a simple idea: insurance should be easy to understand
+          and easy to trust. Because we're independent, we're not tied to one carrier's pricing
+          or product line — we shop the market and bring back the options that actually make sense for you.
+        </p>
+        <ul class="about-list">
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 13L9.5 17.5L19 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg> Access to 20+ A-rated national and regional carriers</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 13L9.5 17.5L19 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg> One dedicated advisor from quote through claim</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 13L9.5 17.5L19 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg> Annual policy reviews to keep your coverage current</li>
+        </ul>
+        <a href="#contact" class="btn btn-outline">Meet the Team</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <section class="section section-dark" id="why">
+    <div class="container">
+      <div class="section-head reveal light">
+        <p class="kicker">Why Choose Us</p>
+        <h2>The DK difference</h2>
+        <p class="section-sub">Four reasons clients stay with us for years, not just a policy term.</p>
+      </div>
+
+      <div class="grid grid-4">
+        <div class="feature reveal">
+          <div class="feature-num">01</div>
+          <h3>Independent &amp; Unbiased</h3>
+          <p>We work for you, not an insurance company — so our advice has no hidden agenda.</p>
+        </div>
+        <div class="feature reveal" style="--d:0.08s">
+          <div class="feature-num">02</div>
+          <h3>Real Human Advisors</h3>
+          <p>Every client gets a dedicated agent who knows their policy — and picks up the phone.</p>
+        </div>
+        <div class="feature reveal" style="--d:0.16s">
+          <div class="feature-num">03</div>
+          <h3>Claims Advocacy</h3>
+          <p>When you file a claim, we advocate on your behalf to get it resolved fairly and fast.</p>
+        </div>
+        <div class="feature reveal" style="--d:0.24s">
+          <div class="feature-num">04</div>
+          <h3>Transparent Pricing</h3>
+          <p>Clear breakdowns, no hidden fees, and honest answers about what you actually need.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="section" id="process">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="kicker">How It Works</p>
+        <h2>Coverage in four simple steps</h2>
+      </div>
+
+      <div class="process-track">
+        <div class="process-line" id="processLine"></div>
+        <div class="process-step reveal">
+          <div class="process-dot">1</div>
+          <h3>Tell Us About You</h3>
+          <p>A quick call or form to understand your needs and current coverage.</p>
+        </div>
+        <div class="process-step reveal" style="--d:0.1s">
+          <div class="process-dot">2</div>
+          <h3>We Compare Carriers</h3>
+          <p>We shop your profile across our carrier network for the best fit.</p>
+        </div>
+        <div class="process-step reveal" style="--d:0.2s">
+          <div class="process-dot">3</div>
+          <h3>Choose Your Coverage</h3>
+          <p>Review clear options side-by-side and pick the plan that fits.</p>
+        </div>
+        <div class="process-step reveal" style="--d:0.3s">
+          <div class="process-dot">4</div>
+          <h3>We've Got Your Back</h3>
+          <p>Ongoing support, annual reviews, and claims advocacy when it counts.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="section section-testimonials" id="testimonials">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="kicker">Client Stories</p>
+        <h2>Trusted by families and business owners alike</h2>
+      </div>
+
+      <div class="testimonial-slider reveal">
+        <div class="testimonial-track" id="testimonialTrack">
+          <div class="testimonial-slide active">
+            <div class="stars">★★★★★</div>
+            <p>"DK Insurance found us better home and auto coverage for less than we were paying — and actually explained what everything meant."</p>
+            <div class="testimonial-author">
+              <div class="avatar">JM</div>
+              <div><strong>Jordan M.</strong><span>Homeowner Client</span></div>
+            </div>
+          </div>
+          <div class="testimonial-slide">
+            <div class="stars">★★★★★</div>
+            <p>"When I had to file a claim after a storm, my agent handled everything. I didn't have to fight the carrier alone."</p>
+            <div class="testimonial-author">
+              <div class="avatar">SR</div>
+              <div><strong>Sarah R.</strong><span>Policy Holder Since 2019</span></div>
+            </div>
+          </div>
+          <div class="testimonial-slide">
+            <div class="stars">★★★★★</div>
+            <p>"As a small business owner, I needed someone who understood my risk, not a generic quote. That's exactly what I got."</p>
+            <div class="testimonial-author">
+              <div class="avatar">DK</div>
+              <div><strong>David K.</strong><span>Business Owner</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-controls">
+          <button class="t-btn" id="tPrev" aria-label="Previous testimonial">←</button>
+          <div class="t-dots" id="tDots"></div>
+          <button class="t-btn" id="tNext" aria-label="Next testimonial">→</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" id="faq">
+    <div class="container faq-layout">
+      <div class="section-head reveal align-left">
+        <p class="kicker">Good to Know</p>
+        <h2>Frequently asked questions</h2>
+        <p class="section-sub">Can't find what you're looking for? <a href="#contact" class="inline-link">Reach out</a> — we're happy to help.</p>
+      </div>
+
+      <div class="faq-list reveal" style="--d:0.1s">
+        <div class="faq-item">
+          <button class="faq-question">
+            What types of insurance do you offer?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer"><p>We offer auto, home, life, health, business, and umbrella/specialty coverage through a network of A-rated carriers, so we can match you to the right plan rather than a one-size-fits-all product.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            How is an independent agency different?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer"><p>Unlike a captive agent who represents one company, we compare multiple carriers on your behalf, so the advice you get is based on your needs — not a sales quota.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            How quickly can I get a quote?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer"><p>Most quotes are ready within 24 hours of a quick intake call or form submission. Simple auto or home quotes can often be turned around same-day.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            What do I do if I need to file a claim?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer"><p>Call our office or your dedicated advisor directly. We'll walk you through the carrier's claims process and advocate on your behalf until it's resolved.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            Do you offer bundling discounts?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer"><p>Yes — bundling auto, home, and other policies with the same carrier often unlocks meaningful discounts. We'll flag bundling opportunities when we build your quote.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUOTE / CTA -->
+  <section class="section quote-section" id="quote">
+    <div class="quote-glow"></div>
+    <div class="container quote-grid">
+      <div class="quote-copy reveal">
+        <p class="kicker light-kicker">Get Started</p>
+        <h2>Get a free quote in minutes.</h2>
+        <p class="section-sub light-sub">Fill out the form and a licensed advisor will follow up with real options — no obligation, no spam.</p>
+        <div class="quote-contact">
+          <a href="tel:+15551234567">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8C8 13.6 10.4 16 13.2 17.4L15.4 15.2C15.7 14.9 16.1 14.8 16.5 15C17.8 15.4 19.1 15.6 20.5 15.6C21.1 15.6 21.5 16 21.5 16.6V20.5C21.5 21.1 21.1 21.5 20.5 21.5C10.8 21.5 3 13.7 3 4C3 3.4 3.4 3 4 3H7.9C8.5 3 8.9 3.4 8.9 4C8.9 5.4 9.1 6.7 9.5 8C9.6 8.4 9.5 8.8 9.3 9.1L6.6 10.8Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+            (555) 123-4567
+          </a>
+          <a href="mailto:info@dkinsurance.agency">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M3 7L12 13L21 7" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+            info@dkinsurance.agency
+          </a>
+        </div>
+      </div>
+
+      <form class="quote-form reveal" id="quoteForm" style="--d:0.1s">
+        <div class="form-row">
+          <div class="field">
+            <input type="text" id="fName" required placeholder=" ">
+            <label for="fName">Full Name</label>
+          </div>
+          <div class="field">
+            <input type="tel" id="fPhone" required placeholder=" ">
+            <label for="fPhone">Phone Number</label>
+          </div>
+        </div>
+        <div class="field">
+          <input type="email" id="fEmail" required placeholder=" ">
+          <label for="fEmail">Email Address</label>
+        </div>
+        <div class="field">
+          <select id="fType" required>
+            <option value="" disabled selected hidden>&nbsp;</option>
+            <option>Auto Insurance</option>
+            <option>Home Insurance</option>
+            <option>Life Insurance</option>
+            <option>Business Insurance</option>
+            <option>Health Insurance</option>
+            <option>Umbrella / Specialty</option>
+          </select>
+          <label for="fType" class="select-label">Coverage Type</label>
+        </div>
+        <div class="field">
+          <textarea id="fMsg" rows="3" placeholder=" "></textarea>
+          <label for="fMsg">What are you looking to cover? (optional)</label>
+        </div>
+        <button type="submit" class="btn btn-primary btn-lg btn-block">
+          <span class="btn-text">Request My Free Quote</span>
+          <span class="btn-loader"></span>
+        </button>
+        <p class="form-note">By submitting, you agree to be contacted by DK Insurance Agency. No spam, ever.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section" id="contact">
+    <div class="container contact-grid">
+      <div class="contact-card reveal">
+        <div class="contact-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 22C12 22 5 15.4 5 10.2C5 6.2 8.1 3 12 3C15.9 3 19 6.2 19 10.2C19 15.4 12 22 12 22Z" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="10" r="2.6" stroke="currentColor" stroke-width="1.6"/></svg>
+        </div>
+        <h3>Visit Our Office</h3>
+        <p>123 Main Street, Suite 200<br>Your City, ST 00000</p>
+      </div>
+      <div class="contact-card reveal" style="--d:0.08s">
+        <div class="contact-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M12 7V12L15.5 14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Office Hours</h3>
+        <p>Mon – Fri: 9:00 AM – 5:00 PM<br>24/7 Claims Support</p>
+      </div>
+      <div class="contact-card reveal" style="--d:0.16s">
+        <div class="contact-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8C8 13.6 10.4 16 13.2 17.4L15.4 15.2C15.7 14.9 16.1 14.8 16.5 15C17.8 15.4 19.1 15.6 20.5 15.6C21.1 15.6 21.5 16 21.5 16.6V20.5C21.5 21.1 21.1 21.5 20.5 21.5C10.8 21.5 3 13.7 3 4C3 3.4 3.4 3 4 3H7.9C8.5 3 8.9 3.4 8.9 4C8.9 5.4 9.1 6.7 9.5 8C9.6 8.4 9.5 8.8 9.3 9.1L6.6 10.8Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Talk to an Advisor</h3>
+        <p>(555) 123-4567<br>info@dkinsurance.agency</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a href="#home" class="logo">
+        <span class="logo-mark">
+          <svg width="30" height="30" viewBox="0 0 40 40" fill="none"><path d="M20 2L36 9V19C36 28.5 29.5 35.8 20 38C10.5 35.8 4 28.5 4 19V9L20 2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M13 20.5L18 25.5L27.5 15" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        <span class="logo-text">DK <em>Insurance</em></span>
+      </a>
+      <p>Independent insurance agency helping families and businesses find coverage that fits — backed by real people, not a script.</p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="#about">About Us</a>
+      <a href="#why">Why Choose Us</a>
+      <a href="#testimonials">Reviews</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+    <div class="footer-col">
+      <h4>Coverage</h4>
+      <a href="#services">Auto Insurance</a>
+      <a href="#services">Home Insurance</a>
+      <a href="#services">Life Insurance</a>
+      <a href="#services">Business Insurance</a>
+    </div>
+
+    <div class="footer-col">
+      <h4>Get In Touch</h4>
+      <a href="tel:+15551234567">(555) 123-4567</a>
+      <a href="mailto:info@dkinsurance.agency">info@dkinsurance.agency</a>
+      <div class="footer-social">
+        <a href="#" aria-label="Facebook">f</a>
+        <a href="#" aria-label="Instagram">◎</a>
+        <a href="#" aria-label="LinkedIn">in</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container footer-bottom">
+    <p>© 2026 DK Insurance Agency. All rights reserved. License #XXXXXXX — placeholder.</p>
+    <div class="footer-legal">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Use</a>
+    </div>
+  </div>
+</footer>
+
+<button class="back-to-top" id="backToTop" aria-label="Back to top">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 19V5M12 5L6 11M12 5L18 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</button>
+
+<div class="toast" id="formToast">Thanks! Your request was received — we'll be in touch shortly.</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>
