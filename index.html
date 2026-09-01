@@ -12,6 +12,7 @@
 </head>
 <body>
 
+<div class="grain" aria-hidden="true"></div>
 <div class="progress-bar" id="progressBar"></div>
 
 <header class="site-header" id="siteHeader">
@@ -19,8 +20,8 @@
     <a href="#home" class="logo">
       <span class="logo-mark" aria-hidden="true">
         <svg width="34" height="34" viewBox="0 0 34 34" fill="none">
-          <path d="M17 2L30 8V16C30 24.5 24.6 30.8 17 33C9.4 30.8 4 24.5 4 16V8L17 2Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-          <path d="M11.5 17L15.2 20.7L23 12.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          <path class="logo-draw" pathLength="1" d="M17 2L30 8V16C30 24.5 24.6 30.8 17 33C9.4 30.8 4 24.5 4 16V8L17 2Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+          <path class="logo-draw" pathLength="1" style="animation-delay:.5s" d="M11.5 17L15.2 20.7L23 12.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </span>
       <span class="logo-text">DK <em>Insurance</em></span>
@@ -44,7 +45,10 @@
 
   <!-- HERO -->
   <section class="hero" id="home">
-    <div class="hero-field" aria-hidden="true">
+    <div class="hero-field" id="heroField" aria-hidden="true">
+      <div class="aurora aurora-1"></div>
+      <div class="aurora aurora-2"></div>
+      <div class="aurora aurora-3"></div>
       <svg class="hero-svg" viewBox="0 0 1200 900" preserveAspectRatio="xMidYMid slice">
         <defs>
           <linearGradient id="ringGrad" x1="0" y1="0" x2="1" y2="1">
@@ -52,12 +56,12 @@
             <stop offset="1" stop-color="#EADFC7"/>
           </linearGradient>
         </defs>
-        <circle cx="920" cy="230" r="260" stroke="url(#ringGrad)" stroke-width="1" fill="none" opacity="0.5"/>
-        <circle cx="980" cy="300" r="360" stroke="#C9A46B" stroke-width="1" fill="none" opacity="0.25"/>
-        <circle cx="860" cy="180" r="120" fill="#C9A46B" opacity="0.08"/>
-        <line x1="700" y1="700" x2="1150" y2="250" stroke="#C9A46B" stroke-width="1" opacity="0.15"/>
+        <circle cx="920" cy="230" r="260" stroke="url(#ringGrad)" stroke-width="1" fill="none" opacity="0.45"/>
+        <circle cx="980" cy="300" r="360" stroke="#C9A46B" stroke-width="1" fill="none" opacity="0.2"/>
+        <line x1="700" y1="700" x2="1150" y2="250" stroke="#C9A46B" stroke-width="1" opacity="0.12"/>
       </svg>
     </div>
+    <div class="hero-spotlight" id="heroSpotlight" aria-hidden="true"></div>
 
     <div class="container hero-inner">
       <p class="eyebrow reveal">Independent &amp; Unaffiliated</p>
@@ -93,6 +97,31 @@
           <span class="stat-num" data-count="98">0</span><span class="stat-suffix">%</span>
           <span class="stat-label">Client retention</span>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST MARQUEE -->
+  <section class="trust" aria-label="Carrier partners">
+    <p class="trust-label container">Quoting across 30+ A-rated carriers, including</p>
+    <div class="marquee">
+      <div class="marquee-track">
+        <span class="marquee-item">Meridian Mutual</span>
+        <span class="marquee-item">Harborstone</span>
+        <span class="marquee-item">Continental Assurance</span>
+        <span class="marquee-item">Northfield Reciprocal</span>
+        <span class="marquee-item">Blue Pine Casualty</span>
+        <span class="marquee-item">Anchorpoint Specialty</span>
+        <span class="marquee-item">Granite Coast</span>
+        <span class="marquee-item">Summit Indemnity</span>
+        <span class="marquee-item" aria-hidden="true">Meridian Mutual</span>
+        <span class="marquee-item" aria-hidden="true">Harborstone</span>
+        <span class="marquee-item" aria-hidden="true">Continental Assurance</span>
+        <span class="marquee-item" aria-hidden="true">Northfield Reciprocal</span>
+        <span class="marquee-item" aria-hidden="true">Blue Pine Casualty</span>
+        <span class="marquee-item" aria-hidden="true">Anchorpoint Specialty</span>
+        <span class="marquee-item" aria-hidden="true">Granite Coast</span>
+        <span class="marquee-item" aria-hidden="true">Summit Indemnity</span>
       </div>
     </div>
   </section>
