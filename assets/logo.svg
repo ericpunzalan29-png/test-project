@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 130" role="img" aria-labelledby="dkLogoTitle">
+  <title id="dkLogoTitle">DK Insurance logo</title>
+  <g font-family="'Poppins','Inter',sans-serif" font-weight="800" text-anchor="middle">
+    <text x="110" y="72" font-size="76" fill="#ffffff" stroke="#ffffff" stroke-width="10" stroke-linejoin="round">DK</text>
+    <text x="110" y="72" font-size="76" fill="#1487d8">DK</text>
+    <line x1="18" y1="94" x2="202" y2="94" stroke="#ffffff" stroke-width="3"/>
+    <text x="110" y="120" font-size="26" letter-spacing="2" fill="#ffffff" stroke="#ffffff" stroke-width="3">INSURANCE</text>
+    <text x="110" y="120" font-size="26" letter-spacing="2" fill="#1487d8">INSURANCE</text>
+  </g>
+</svg>
