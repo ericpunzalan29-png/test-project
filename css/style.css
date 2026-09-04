@@ -482,6 +482,47 @@ section { padding-block: var(--space-6); }
 .service-card .card-link:hover { color: var(--gold); }
 
 /* ==========================================================================
+   How it works (steps)
+   ========================================================================== */
+.steps-grid {
+  display: grid;
+  gap: var(--space-3);
+  grid-template-columns: 1fr;
+}
+@media (min-width: 640px) {
+  .steps-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 1024px) {
+  .steps-grid { grid-template-columns: repeat(4, 1fr); }
+}
+
+.step-card {
+  background: var(--white);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  box-shadow: var(--shadow-sm);
+}
+
+.step-index {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--cream);
+  color: var(--gold);
+  font-family: var(--font-serif);
+  font-weight: 800;
+  font-size: 1.05rem;
+  margin-bottom: var(--space-2);
+}
+
+.step-card h3 { font-size: 1.1rem; margin-bottom: 0.4rem; }
+.step-card p { color: var(--text-gray); font-size: 0.92rem; }
+
+/* ==========================================================================
    Why choose us
    ========================================================================== */
 .why-us { background: var(--cream); }
@@ -510,41 +551,96 @@ section { padding-block: var(--space-6); }
 .why-card p { color: var(--text-gray); font-size: 0.9rem; }
 
 /* ==========================================================================
-   Testimonial
+   Testimonial mosaic (Real Clients, Real Stories)
    ========================================================================== */
-.testimonial {
-  background: var(--cream);
-  text-align: center;
-}
-.testimonial-card {
-  max-width: 760px;
-  margin-inline: auto;
-}
-.stars {
-  display: flex;
-  justify-content: center;
-  gap: 0.25rem;
-  margin-bottom: var(--space-3);
-}
-.stars svg { width: 22px; height: 22px; color: var(--gold); }
+.stories { background: var(--cream); }
 
-.testimonial-quote {
+.stories-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+.stories-head .eyebrow { align-items: flex-start; margin-bottom: var(--space-1); }
+.stories-head .eyebrow::after { margin-inline: 0; }
+.stories-head h2 { font-size: clamp(1.8rem, 3.2vw, 2.5rem); }
+.stories-head h2 em { font-style: normal; color: var(--gold); }
+.stories-sub {
+  color: var(--text-gray);
+  max-width: 320px;
+  font-size: 0.98rem;
+}
+
+.stories-grid {
+  display: grid;
+  gap: var(--space-3);
+  grid-template-columns: 1fr;
+}
+@media (min-width: 900px) {
+  .stories-grid {
+    grid-template-columns: 1.3fr 1fr;
+    grid-template-rows: repeat(2, auto);
+  }
+  .story-quote { grid-row: 1 / 3; }
+}
+
+.story-card {
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+}
+
+.story-quote {
+  background: var(--navy);
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: var(--space-5);
+}
+.story-quote .stars { display: flex; gap: 0.25rem; margin-bottom: var(--space-3); }
+.story-quote .stars svg { width: 20px; height: 20px; color: var(--gold-light); }
+.story-quote .testimonial-quote {
   font-family: var(--font-serif);
-  font-size: clamp(1.3rem, 2.6vw, 1.7rem);
-  color: var(--navy);
+  font-size: clamp(1.2rem, 2.2vw, 1.5rem);
+  color: var(--white);
   line-height: 1.45;
   margin-bottom: var(--space-3);
 }
-
-.testimonial-name {
+.story-quote .testimonial-name {
   font-weight: 800;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--gold);
-  font-size: 0.9rem;
-  margin-bottom: 0.25rem;
+  color: var(--gold-light);
+  font-size: 0.85rem;
+  margin-bottom: 0.2rem;
 }
-.testimonial-role { color: var(--text-gray); font-weight: 600; font-size: 0.9rem; }
+.story-quote .testimonial-role { color: rgba(255, 255, 255, 0.65); font-weight: 600; font-size: 0.85rem; }
+
+.story-pullquote {
+  background: linear-gradient(160deg, var(--gold-light), var(--gold));
+  color: var(--navy);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 140px;
+}
+.story-quote-mark { width: 30px; height: 30px; color: rgba(15, 28, 51, 0.35); margin-bottom: var(--space-1); }
+.story-pullquote p {
+  font-family: var(--font-serif);
+  font-size: clamp(1.15rem, 2vw, 1.35rem);
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.story-highlight {
+  background: var(--white);
+  box-shadow: var(--shadow-sm);
+}
+.story-highlight .service-icon { margin-bottom: var(--space-2); }
+.story-highlight h3 { font-size: 1.05rem; margin-bottom: 0.4rem; }
+.story-highlight p { color: var(--text-gray); font-size: 0.92rem; }
 
 /* ==========================================================================
    CTA band
