@@ -25,8 +25,8 @@ SLIDES = [
         ("h1", (55, 175, 600, 270), "w"),
         ("h2", (55, 270, 650, 360), "w"),
         ("h3", (55, 360, 795, 455), "d"),
-        ("sub", (55, 1080, 680, 1165), "w"),
-        ("cta", (55, 1180, 505, 1285), "wg"),
+        ("sub", (55, 1080, 680, 1165), "w", 9),
+        ("cta", (55, 1180, 505, 1285), "wg", 9),
     ]),
 ]
 
@@ -43,36 +43,49 @@ def colour_mask(rgb, classes):
     return m
 
 
-data = []
+ONLY = [int(x) for x in sys.argv[2].split(",")] if len(sys.argv) > 2 else None
+data = pickle.load(open(f"{OUT}/layers3.pkl", "rb")) if ONLY else []
 os.makedirs(OUT, exist_ok=True)
-for fname, elems in SLIDES:
+for si, (fname, elems) in enumerate(SLIDES):
+    if ONLY and si not in ONLY:
+        continue
     bgr = cv2.imread(f"{IMG}/{fname}")
     rgb = cv2.cvtColor(bgr, cv2.COLOR_BGR2RGB)
     full_mask = np.zeros(rgb.shape[:2], np.uint8)
     layers = []
-    for name, (x0, y0, x1, y1), cls in elems:
+    for e in elems:
+        name, (x0, y0, x1, y1), cls = e[:3]; dil = e[3] if len(e) > 3 else 25
         m = np.zeros(rgb.shape[:2], bool)
         m[y0:y1, x0:x1] = colour_mask(rgb[y0:y1, x0:x1], cls)
         m8 = m.astype(np.uint8) * 255
-        # include anti-aliased edges + drop shadow
-        wide = cv2.dilate(m8, cv2.getStructuringElement(cv2.MORPH_ELLIPSE,(27, 27)))
+        wide = cv2.dilate(m8, cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (dil, dil)))
         full_mask |= wide
-        alpha = cv2.GaussianBlur(cv2.dilate(wide, np.ones((9, 9), np.uint8)), (0, 0), 5)
+        tight = cv2.GaussianBlur(cv2.dilate(m8, cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (5, 5))), (0, 0), 1.2)
+        settle = cv2.GaussianBlur(cv2.dilate(wide, np.ones((7, 7), np.uint8)), (0, 0), 4)
         P = 24
         x0, y0 = max(0, x0 - P), max(0, y0 - P)
         x1, y1 = min(1080, x1 + P), min(1350, y1 + P)
-        layers.append(dict(name=name, box=(x0, y0, x1, y1), alpha=alpha[y0:y1, x0:x1]))
-    clean = cv2.inpaint(bgr, full_mask, 9, cv2.INPAINT_TELEA)
-    soft = cv2.GaussianBlur(clean, (0, 0), 9)
-    w = cv2.GaussianBlur(cv2.dilate(full_mask, np.ones((9, 9), np.uint8)), (0, 0), 6)[..., None] / 255.0
-    clean = (clean * (1 - w) + soft * w).astype(np.uint8)
+        layers.append(dict(name=name, box=(x0, y0, x1, y1), alpha=tight[y0:y1, x0:x1], settle=settle[y0:y1, x0:x1]))
+    # texture-aware fill (frequency selective reconstruction), per masked band
+    clean = bgr.copy()
+    ys, xs = np.where(full_mask > 0)
+    n, lab, stats, _ = cv2.connectedComponentsWithStats(cv2.dilate(full_mask, np.ones((61, 61), np.uint8)))
+    for k in range(1, n):
+        x, y, w, h = stats[k, :4]
+        X0, Y0, X1, Y1 = max(0, x - 40), max(0, y - 40), min(1080, x + w + 40), min(1350, y + h + 40)
+        src = clean[Y0:Y1, X0:X1].copy()
+        msk = (full_mask[Y0:Y1, X0:X1] == 0).astype(np.uint8)  # 1 = known
+        dst = np.zeros_like(src)
+        cv2.xphoto.inpaint(src, msk, dst, cv2.xphoto.INPAINT_FSR_BEST)
+        clean[Y0:Y1, X0:X1] = np.where(msk[..., None] == 0, dst, src)
     clean_rgb = cv2.cvtColor(clean, cv2.COLOR_BGR2RGB)
     for L in layers:
         x0, y0, x1, y1 = L["box"]
         L["rgb"] = rgb[y0:y1, x0:x1].copy()
-        L["bg"] = clean_rgb[y0:y1, x0:x1].copy()
     cv2.imwrite(f"{OUT}/{fname}_clean.jpg", clean)
-    data.append(dict(orig=rgb, clean=clean_rgb, layers=layers))
+    entry = dict(orig=rgb, clean=clean_rgb, layers=layers)
+    if ONLY: data[si] = entry
+    else: data.append(entry)
 
-pickle.dump(data, open(f"{OUT}/layers.pkl", "wb"))
+pickle.dump(data, open(f"{OUT}/layers3.pkl", "wb"))
 print("ok")
